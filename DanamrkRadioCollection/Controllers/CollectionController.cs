@@ -5,51 +5,49 @@ using DanamrkRadioCollection.Models;
 
 namespace DanamrkRadioCollection.Controllers
 {
-    public class CollectionController
-    {
-        [Route("api/[controller]")]
+    [Route("api/[controller]")]
         // the controller is available on ..../api/books
         // [controller] means the name of the controller minus "Controller"
         [ApiController]
-        public class BooksController : ControllerBase
+        public class CollectionController : ControllerBase
         {
             private readonly CollectionManager _manager = new CollectionManager();
 
             // GET: api/<BooksController>
             [HttpGet]
-            public IEnumerable<Book> Get()
+            public IEnumerable<Collection> Get()
             {
                 return _manager.GetAll();
             }
 
             // GET api/<BooksController>/5
             [HttpGet("{id}")]
-            public Book Get(int id)
+            public Collection Get(int id)
             {
                 return _manager.GetById(id);
             }
 
             // POST api/<BooksController>
             [HttpPost]
-            public Book Post([FromBody] Book value)
+            public Collection Post([FromBody] Collection value)
             {
                 return _manager.Add(value);
             }
 
             // PUT api/<BooksController>/5
             [HttpPut("{id}")]
-            public Book Put(int id, [FromBody] Book value)
+            public Collection Put(int id, [FromBody] Collection value)
             {
                 return _manager.Update(id, value);
             }
 
             // DELETE api/<BooksController>/5
             [HttpDelete("{id}")]
-            public Book Delete(int id)
+            public Collection Delete(int id)
             {
                 return _manager.Delete(id);
             }
         }
     }
-}
+
 

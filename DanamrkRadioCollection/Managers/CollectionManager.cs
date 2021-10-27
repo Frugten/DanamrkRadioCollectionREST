@@ -8,7 +8,7 @@ namespace DanamrkRadioCollection.Managers
         private static int _nextId = 1;
         private static readonly List<Collection> Data = new List<Collection>
         {
-            new Collection {Id = _nextId++, Title = "C# is nice", Price = 12.34},
+            new Collection {Id = _nextId++, Title = "Welcome to my life", Kunstner = "world", Genre = "Pop"},
             new Collection {Id=_nextId++, Title = "Python is even nicer", Price = 22.33}
             // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
         };
@@ -22,7 +22,7 @@ namespace DanamrkRadioCollection.Managers
 
         public Collection GetById(int id)
         {
-            return Data.Find(book => book.Id == id);
+            return Data.Find(bk => book.Id == id);
         }
 
         public Collection Add(Collection newBook)
@@ -32,17 +32,17 @@ namespace DanamrkRadioCollection.Managers
             return newBook;
         }
 
-        public CollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollection Delete(int id)
+        public Collection Delete(int id)
         {
-            Book book = Data.Find(book1 => book1.Id == id);
+            Collection book = Data.Find(book1 => book1.Id == id);
             if (book == null) return null;
             Data.Remove(book);
             return book;
         }
 
-        public Book Update(int id, Book updates)
+        public Collection Update(int id, Collection updates)
         {
-            Book book = Data.Find(book1 => book1.Id == id);
+            Collection book = Data.Find(book1 => book1.Id == id);
             if (book == null) return null;
             book.Title = updates.Title;
             book.Price = updates.Price;
