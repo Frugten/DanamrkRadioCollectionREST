@@ -1,38 +1,38 @@
 ﻿using System.Collections.Generic;
-using RESTbookFirst.Models;
+using DanamrkRadioCollection.Models;
 
 namespace DanamrkRadioCollection.Managers
 {
     public class CollectionManager
     {
         private static int _nextId = 1;
-        private static readonly List<Book> Data = new List<Book>
+        private static readonly List<Collection> Data = new List<Collection>
         {
-            new Book {Id = _nextId++, Title = "C# is nice", Price = 12.34},
-            new Book {Id=_nextId++, Title = "Python is even nicer", Price = 22.33}
+            new Collection {Id = _nextId++, Title = "C# is nice", Price = 12.34},
+            new Collection {Id=_nextId++, Title = "Python is even nicer", Price = 22.33}
             // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers
         };
 
-        public List<Book> GetAll()
+        public List<Collection> GetAll()
         {
-            return new List<Book>(Data);
+            return new List<Collection>(Data);
             // copy constructor
             // Callers should no get a reference to the Data object, but rather get a copy
         }
 
-        public Book GetById(int id)
+        public Collection GetById(int id)
         {
             return Data.Find(book => book.Id == id);
         }
 
-        public Book Add(Book newBook)
+        public Collection Add(Collection newBook)
         {
             newBook.Id = _nextId++;
             Data.Add(newBook);
             return newBook;
         }
 
-        public Book Delete(int id)
+        public CollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollectionCollection Delete(int id)
         {
             Book book = Data.Find(book1 => book1.Id == id);
             if (book == null) return null;

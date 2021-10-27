@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using RESTbookFirst.Managers;
-using RESTbookFirst.Models;
+using DanamrkRadioCollection.Managers;
+using DanamrkRadioCollection.Models;
 
 namespace DanamrkRadioCollection.Controllers
 {
@@ -13,7 +13,7 @@ namespace DanamrkRadioCollection.Controllers
         [ApiController]
         public class BooksController : ControllerBase
         {
-            private readonly BooksManager _manager = new BooksManager();
+            private readonly CollectionManager _manager = new CollectionManager();
 
             // GET: api/<BooksController>
             [HttpGet]
